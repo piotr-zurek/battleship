@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Battleship Game</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="form">
+    <form>
+      <h2>Enter your name:</h2>
+      <form action="#">
+        <input type="text" id="inputName">
+        <button id="submitName">Submit</button>
+      </form>
+    </form>
+  </div>
+  <div id="board" style="display: none;">
+    <div id="player">
+      <h2><span class="playerName">Player</span> <span class="playerScoore">0</span></h2>
+      <input type="text" class="cpuCounter counter" disabled>
+      <div class="row">
+        <div class="field" data-row="0" data-col="0"></div>
+        <div class="field" data-row="0" data-col="1"></div>
+        <div class="field" data-row="0" data-col="2"></div>
+        <div class="field" data-row="0" data-col="3"></div>
+        <div class="field" data-row="0" data-col="4"></div>
+        <div class="field" data-row="0" data-col="5"></div>
+        <div class="field" data-row="0" data-col="6"></div>
+        <div class="field" data-row="0" data-col="7"></div>
+        <div class="field" data-row="0" data-col="8"></div>
+        <div class="field" data-row="0" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="1" data-col="0"></div>
+        <div class="field" data-row="1" data-col="1"></div>
+        <div class="field" data-row="1" data-col="2"></div>
+        <div class="field" data-row="1" data-col="3"></div>
+        <div class="field" data-row="1" data-col="4"></div>
+        <div class="field" data-row="1" data-col="5"></div>
+        <div class="field" data-row="1" data-col="6"></div>
+        <div class="field" data-row="1" data-col="7"></div>
+        <div class="field" data-row="1" data-col="8"></div>
+        <div class="field" data-row="1" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="2" data-col="0"></div>
+        <div class="field" data-row="2" data-col="1"></div>
+        <div class="field" data-row="2" data-col="2"></div>
+        <div class="field" data-row="2" data-col="3"></div>
+        <div class="field" data-row="2" data-col="4"></div>
+        <div class="field" data-row="2" data-col="5"></div>
+        <div class="field" data-row="2" data-col="6"></div>
+        <div class="field" data-row="2" data-col="7"></div>
+        <div class="field" data-row="2" data-col="8"></div>
+        <div class="field" data-row="2" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="3" data-col="0"></div>
+        <div class="field" data-row="3" data-col="1"></div>
+        <div class="field" data-row="3" data-col="2"></div>
+        <div class="field" data-row="3" data-col="3"></div>
+        <div class="field" data-row="3" data-col="4"></div>
+        <div class="field" data-row="3" data-col="5"></div>
+        <div class="field" data-row="3" data-col="6"></div>
+        <div class="field" data-row="3" data-col="7"></div>
+        <div class="field" data-row="3" data-col="8"></div>
+        <div class="field" data-row="3" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="4" data-col="0"></div>
+        <div class="field" data-row="4" data-col="1"></div>
+        <div class="field" data-row="4" data-col="2"></div>
+        <div class="field" data-row="4" data-col="3"></div>
+        <div class="field" data-row="4" data-col="4"></div>
+        <div class="field" data-row="4" data-col="5"></div>
+        <div class="field" data-row="4" data-col="6"></div>
+        <div class="field" data-row="4" data-col="7"></div>
+        <div class="field" data-row="4" data-col="8"></div>
+        <div class="field" data-row="4" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="5" data-col="0"></div>
+        <div class="field" data-row="5" data-col="1"></div>
+        <div class="field" data-row="5" data-col="2"></div>
+        <div class="field" data-row="5" data-col="3"></div>
+        <div class="field" data-row="5" data-col="4"></div>
+        <div class="field" data-row="5" data-col="5"></div>
+        <div class="field" data-row="5" data-col="6"></div>
+        <div class="field" data-row="5" data-col="7"></div>
+        <div class="field" data-row="5" data-col="8"></div>
+        <div class="field" data-row="5" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="6" data-col="0"></div>
+        <div class="field" data-row="6" data-col="1"></div>
+        <div class="field" data-row="6" data-col="2"></div>
+        <div class="field" data-row="6" data-col="3"></div>
+        <div class="field" data-row="6" data-col="4"></div>
+        <div class="field" data-row="6" data-col="5"></div>
+        <div class="field" data-row="6" data-col="6"></div>
+        <div class="field" data-row="6" data-col="7"></div>
+        <div class="field" data-row="6" data-col="8"></div>
+        <div class="field" data-row="6" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="7" data-col="0"></div>
+        <div class="field" data-row="7" data-col="1"></div>
+        <div class="field" data-row="7" data-col="2"></div>
+        <div class="field" data-row="7" data-col="3"></div>
+        <div class="field" data-row="7" data-col="4"></div>
+        <div class="field" data-row="7" data-col="5"></div>
+        <div class="field" data-row="7" data-col="6"></div>
+        <div class="field" data-row="7" data-col="7"></div>
+        <div class="field" data-row="7" data-col="8"></div>
+        <div class="field" data-row="7" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="8" data-col="0"></div>
+        <div class="field" data-row="8" data-col="1"></div>
+        <div class="field" data-row="8" data-col="2"></div>
+        <div class="field" data-row="8" data-col="3"></div>
+        <div class="field" data-row="8" data-col="4"></div>
+        <div class="field" data-row="8" data-col="5"></div>
+        <div class="field" data-row="8" data-col="6"></div>
+        <div class="field" data-row="8" data-col="7"></div>
+        <div class="field" data-row="8" data-col="8"></div>
+        <div class="field" data-row="8" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="9" data-col="0"></div>
+        <div class="field" data-row="9" data-col="1"></div>
+        <div class="field" data-row="9" data-col="2"></div>
+        <div class="field" data-row="9" data-col="3"></div>
+        <div class="field" data-row="9" data-col="4"></div>
+        <div class="field" data-row="9" data-col="5"></div>
+        <div class="field" data-row="9" data-col="6"></div>
+        <div class="field" data-row="9" data-col="7"></div>
+        <div class="field" data-row="9" data-col="8"></div>
+        <div class="field" data-row="9" data-col="9"></div>
+      </div>
+    </div>
+    <div id="cpu">
+      <h2>CPU <span class="cpuScoore">0</span></h2>
+      <input type="text" class="playerCounter counter" disabled>
+      <div class="row">
+        <div class="field" data-row="0" data-col="0"></div>
+        <div class="field" data-row="0" data-col="1"></div>
+        <div class="field" data-row="0" data-col="2"></div>
+        <div class="field" data-row="0" data-col="3"></div>
+        <div class="field" data-row="0" data-col="4"></div>
+        <div class="field" data-row="0" data-col="5"></div>
+        <div class="field" data-row="0" data-col="6"></div>
+        <div class="field" data-row="0" data-col="7"></div>
+        <div class="field" data-row="0" data-col="8"></div>
+        <div class="field" data-row="0" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="1" data-col="0"></div>
+        <div class="field" data-row="1" data-col="1"></div>
+        <div class="field" data-row="1" data-col="2"></div>
+        <div class="field" data-row="1" data-col="3"></div>
+        <div class="field" data-row="1" data-col="4"></div>
+        <div class="field" data-row="1" data-col="5"></div>
+        <div class="field" data-row="1" data-col="6"></div>
+        <div class="field" data-row="1" data-col="7"></div>
+        <div class="field" data-row="1" data-col="8"></div>
+        <div class="field" data-row="1" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="2" data-col="0"></div>
+        <div class="field" data-row="2" data-col="1"></div>
+        <div class="field" data-row="2" data-col="2"></div>
+        <div class="field" data-row="2" data-col="3"></div>
+        <div class="field" data-row="2" data-col="4"></div>
+        <div class="field" data-row="2" data-col="5"></div>
+        <div class="field" data-row="2" data-col="6"></div>
+        <div class="field" data-row="2" data-col="7"></div>
+        <div class="field" data-row="2" data-col="8"></div>
+        <div class="field" data-row="2" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="3" data-col="0"></div>
+        <div class="field" data-row="3" data-col="1"></div>
+        <div class="field" data-row="3" data-col="2"></div>
+        <div class="field" data-row="3" data-col="3"></div>
+        <div class="field" data-row="3" data-col="4"></div>
+        <div class="field" data-row="3" data-col="5"></div>
+        <div class="field" data-row="3" data-col="6"></div>
+        <div class="field" data-row="3" data-col="7"></div>
+        <div class="field" data-row="3" data-col="8"></div>
+        <div class="field" data-row="3" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="4" data-col="0"></div>
+        <div class="field" data-row="4" data-col="1"></div>
+        <div class="field" data-row="4" data-col="2"></div>
+        <div class="field" data-row="4" data-col="3"></div>
+        <div class="field" data-row="4" data-col="4"></div>
+        <div class="field" data-row="4" data-col="5"></div>
+        <div class="field" data-row="4" data-col="6"></div>
+        <div class="field" data-row="4" data-col="7"></div>
+        <div class="field" data-row="4" data-col="8"></div>
+        <div class="field" data-row="4" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="5" data-col="0"></div>
+        <div class="field" data-row="5" data-col="1"></div>
+        <div class="field" data-row="5" data-col="2"></div>
+        <div class="field" data-row="5" data-col="3"></div>
+        <div class="field" data-row="5" data-col="4"></div>
+        <div class="field" data-row="5" data-col="5"></div>
+        <div class="field" data-row="5" data-col="6"></div>
+        <div class="field" data-row="5" data-col="7"></div>
+        <div class="field" data-row="5" data-col="8"></div>
+        <div class="field" data-row="5" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="6" data-col="0"></div>
+        <div class="field" data-row="6" data-col="1"></div>
+        <div class="field" data-row="6" data-col="2"></div>
+        <div class="field" data-row="6" data-col="3"></div>
+        <div class="field" data-row="6" data-col="4"></div>
+        <div class="field" data-row="6" data-col="5"></div>
+        <div class="field" data-row="6" data-col="6"></div>
+        <div class="field" data-row="6" data-col="7"></div>
+        <div class="field" data-row="6" data-col="8"></div>
+        <div class="field" data-row="6" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="7" data-col="0"></div>
+        <div class="field" data-row="7" data-col="1"></div>
+        <div class="field" data-row="7" data-col="2"></div>
+        <div class="field" data-row="7" data-col="3"></div>
+        <div class="field" data-row="7" data-col="4"></div>
+        <div class="field" data-row="7" data-col="5"></div>
+        <div class="field" data-row="7" data-col="6"></div>
+        <div class="field" data-row="7" data-col="7"></div>
+        <div class="field" data-row="7" data-col="8"></div>
+        <div class="field" data-row="7" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="8" data-col="0"></div>
+        <div class="field" data-row="8" data-col="1"></div>
+        <div class="field" data-row="8" data-col="2"></div>
+        <div class="field" data-row="8" data-col="3"></div>
+        <div class="field" data-row="8" data-col="4"></div>
+        <div class="field" data-row="8" data-col="5"></div>
+        <div class="field" data-row="8" data-col="6"></div>
+        <div class="field" data-row="8" data-col="7"></div>
+        <div class="field" data-row="8" data-col="8"></div>
+        <div class="field" data-row="8" data-col="9"></div>
+      </div>
+      <div class="row">
+        <div class="field" data-row="9" data-col="0"></div>
+        <div class="field" data-row="9" data-col="1"></div>
+        <div class="field" data-row="9" data-col="2"></div>
+        <div class="field" data-row="9" data-col="3"></div>
+        <div class="field" data-row="9" data-col="4"></div>
+        <div class="field" data-row="9" data-col="5"></div>
+        <div class="field" data-row="9" data-col="6"></div>
+        <div class="field" data-row="9" data-col="7"></div>
+        <div class="field" data-row="9" data-col="8"></div>
+        <div class="field" data-row="9" data-col="9"></div>
+      </div>
+    </div>
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="game.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>
