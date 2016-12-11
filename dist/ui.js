@@ -1,10 +1,10 @@
-
-let game;
+let game; //global variable for easier access from console
 $(document).ready(function () {
   game = Battleship();
   let playerScoore = 0;
   let cpuScoore = 0;
 
+  //load name and init game
   $("#submitName").click(function (e) {
     e.preventDefault();
 
@@ -12,7 +12,6 @@ $(document).ready(function () {
     $("#form").hide();
     $('#board').show();
     $('.playerScoore').text();
-
 
     game.init();
   });
@@ -44,17 +43,12 @@ $(document).ready(function () {
 
       refreshUI();
     });
-
   });
 
   game.onFinish(function (player) {
     alert(player == game.ID_PLAYER ? 'Player won!' : 'CPU won!');
 
-    if(player == game.ID_PLAYER) {
-      playerScoore++;
-    } else {
-      cpuScoore++
-    }
+    player == game.ID_PLAYER ? playerScoore++ : cpuScoore++;
 
     $(".playerScoore").text(playerScoore);
     $(".cpuScoore").text(cpuScoore);
@@ -62,14 +56,15 @@ $(document).ready(function () {
     game.restart();
   });
 
-
-
+  /* Refresh UI after changes in model */
   function refreshUI() {
-    //refresh CPU board
+    //refresh boards
     let rows = game.ROWS;
     let cols = game.COLS;
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
+
+        //refresh CPU board
         let cpu = $(`#cpu [data-row=${row}][data-col=${col}]`);
         switch (game.cpuBoard()[col][row]) {
           case game.FIELD_HIT:
@@ -82,7 +77,7 @@ $(document).ready(function () {
           cpu.css("background", "white");
         }
 
-        //refresh player board
+        //refresh Player board
         let player = $(`#player [data-row=${row}][data-col=${col}]`);
         switch (game.playerBoard()[col][row]) {
           case game.FIELD_EMPTY:
@@ -101,6 +96,7 @@ $(document).ready(function () {
       }
     }
 
+    //update counters
     $(".playerCounter").val(game.playerLeft());
     $(".cpuCounter").val(game.cpuLeft());
   }
