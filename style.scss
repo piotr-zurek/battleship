@@ -1,0 +1,58 @@
+body {
+  background: #e4e4e4;
+  min-width: 320px;
+}
+
+h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+#board {
+  text-align: center;
+}
+
+.counter {
+  background: white;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 25px;
+  display: none;
+}
+
+.row {
+  text-align: center;
+  .field {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: #c7c7c7;
+    border: 1px solid gray;
+    border-radius: 2px;
+  }
+}
+
+#cpu, #player {
+  width: 100%;
+}
+
+@media all and (min-width: 600px) {
+  #cpu, #player {
+    float: left;
+    width: 50%;
+  }
+}
+
+#form {
+  margin: 20px auto;
+  background: white;
+  padding: 35px;
+  width: 500px;
+  max-width: 100%;
+  text-align: center;
+  box-shadow: 1px 1px 1px #cccccc;
+}
